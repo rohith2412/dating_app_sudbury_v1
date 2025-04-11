@@ -15,32 +15,13 @@ export function Navbar() {
           />
           <h2 className="lilita-one-regular text-xl ">ASTRA</h2>
         </div>
-        <div className="pr-15 flex w-full justify-end  h-12  ">
+        <div className="pr-15  mt-4 flex w-full justify-end  h-12  ">
           <div className="join border flex  justify-center rounded-4xl  pr-4 pl-4 ">
-            <button className="lilita-one-regular font-bold text-black tracking-tight">
+            <button className="lilita-one-regular font-bold text-gray-800 tracking-tight">
               Join Now
             </button>
           </div>
         </div>
-        {/* <div className="">
-          <button class="AstraPro">
-            <div class="wrapper">
-              <span>UIVERSE</span>
-              <div class="circle circle-12"></div>
-              <div class="circle circle-11"></div>
-              <div class="circle circle-10"></div>
-              <div class="circle circle-9"></div>
-              <div class="circle circle-8"></div>
-              <div class="circle circle-7"></div>
-              <div class="circle circle-6"></div>
-              <div class="circle circle-5"></div>
-              <div class="circle circle-4"></div>
-              <div class="circle circle-3"></div>
-              <div class="circle circle-2"></div>
-              <div class="circle circle-1"></div>
-            </div>
-          </button>
-        </div> */}
       </div>
     </div>
   );
