@@ -27,8 +27,15 @@ body {
 }
 
 .join{
-  background-color: #fff172;
+  background-color: rgb(250, 107, 107);
+  /* background-color: #fff172; */
 }
+
+.Sudbury {
+  color: #fff172;
+}
+
+
 
 .lilita-one-regular {
   font-family: "Lilita One", sans-serif;

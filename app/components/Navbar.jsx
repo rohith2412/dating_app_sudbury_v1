@@ -16,7 +16,7 @@ export function Navbar() {
           <h2 className="lilita-one-regular text-xl ">ASTRA</h2>
         </div>
         <div className="pr-15  mt-4 flex w-full justify-end  h-12  ">
-          <div className="join border flex  justify-center rounded-4xl  pr-4 pl-4 ">
+          <div className="join  border-0 flex  justify-center rounded-4xl  pr-4 pl-4 ">
             <button className="lilita-one-regular font-bold text-gray-800 tracking-tight">
               Join Now
             </button>
