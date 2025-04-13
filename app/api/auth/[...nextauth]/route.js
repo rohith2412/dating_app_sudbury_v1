@@ -1,6 +1,8 @@
 import { connectdb } from "@/connectdb/connectdb";
-import NextAuth from "next-auth/next";
-import GoogleProvider from "next-auth/providers/google"
+import User from "@/models/UserModel";
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+
 
 const handler = NextAuth({
   providers: [
@@ -10,19 +12,47 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async session({ session }) {
+    async session({ session, token }) {
+      if (token?.user) {
+        session.user = token.user;
+      }
+
+      const sessionUser = await User.findOne({ email: session.user?.email });
+
+      if (sessionUser) {
+        session.user.id = sessionUser._id.toString(); 
+      }
+
       return session;
     },
     async signIn({ profile }) {
-      console.log(profile);
       try {
-        await connectdb();
-        return true;
+        await connectdb(); 
+
+        const userExist = await User.findOne({ email: profile.email });
+
+        if (!userExist) {
+          await User.create({
+            email: profile.email,
+            name: profile.name,
+            image: profile.picture,
+          });
+        }
+
+        return {
+          email: profile.email,
+          user: {
+            email: profile.email,
+            name: profile.name,
+            image: profile.picture,
+          },
+        };
       } catch (error) {
-        console.log(error);
+        console.error("Error during sign-in:", error);
+        return false; 
       }
     },
   },
 });
 
-export { handler as GET, handler as POST}
+export { handler as GET, handler as POST };
