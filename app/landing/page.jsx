@@ -10,9 +10,9 @@ export default function Landing() {
       <Minibar />
       <Navbar />
       <Heading />
-      <div className="flex justify-center">
-        <Premiumbutton />
+      <div className="flex justify-center p-20 gap-3">
         <Joinforfree />
+        <Premiumbutton />
       </div>
     </div>
   );
