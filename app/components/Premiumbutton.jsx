@@ -1,7 +1,7 @@
 export default function Premiumbutton() {
     return(
         <div>
-            <div className="flex justify-center p-30">
+            <div className="flex justify-center">
           <button className="AstraPro">
             <div className="wrapper ">
               <span className="tracking-tighter ">Get AstraPro</span>
