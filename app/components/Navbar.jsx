@@ -1,5 +1,6 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
 
 export default function Navbar() {
   const { data: session } = useSession();
@@ -26,11 +27,13 @@ export default function Navbar() {
           <section>
             {!session ? (
               <>
-                <div className="pr-15  mt-4 flex w-full justify-end  h-12  ">
-                  <div className="join  border-0 flex  justify-center rounded-4xl  pr-4 pl-4 ">
-                    <button className="lilita-one-regular font-bold text-gray-800 tracking-tight">
-                      Join Now
-                    </button>
+                <div className="pr-15  mt-4 flex w-full justify-end   ">
+                  <div className="join  border-0 flex  justify-center rounded-4xl   pr-4 pl-4">
+                    <Link href="/0auth">
+                      <button className="lilita-one-regular h-12 cursor-pointer font-bold text-gray-800 tracking-tight">
+                        Join Now
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </>
@@ -45,26 +48,25 @@ export default function Navbar() {
                       font-style: normal;
                     }
                   `}</style>
-                  
+
                   <div className="flex  p-2">
-                    <div className="p-7 ">
+                    <div className="p-3">
                       <div className="flex pt-2 ">
                         <div className="Poppins">{session.user.name}</div>
                         <button
-                          className="pl-9 cursor-pointer"
+                          className="pl-5 cursor-pointer"
                           onClick={() => signOut()}
                         >
                           {" "}
                           <img
-                            className="  "
-                            src="/logout.png"
+                            className=""
+                            src="logout.png"
                             alt="Logo"
                             width="20"
                             height="20"
                           />
                         </button>
                       </div>
-                      
                     </div>
                   </div>
                 </div>
