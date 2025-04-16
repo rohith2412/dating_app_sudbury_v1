@@ -1,7 +1,7 @@
 import Heading from "../components/Heading";
 import { Joinforfree } from "../components/Joinforfree";
 import Minibar from "../components/Minibar";
-import { Navbar } from "../components/Navbar";
+import  Navbar  from "../components/Navbar";
 import Premiumbutton from "../components/Premiumbutton";
 
 export default function Landing() {
