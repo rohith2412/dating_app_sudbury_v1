@@ -19,7 +19,11 @@ export function Joinforfree() {
         </>
       ) : (
         <>
-        {" "}
+        <Link href="/dashboard">
+            <button className="cursor-pointer flex justify-center border-white border-2 p-3 rounded-4xl ">
+              View Dashboard
+            </button>
+          </Link>
          </>
       )}
     </div>

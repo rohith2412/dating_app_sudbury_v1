@@ -20,7 +20,7 @@ export default function Navbar() {
             alt="logo"
             className="transform scale-x-[-1] w-10 h-10  "
           />
-          <h2 className="lilita-one-regular text-xl ">ASTRA</h2>
+          <h2 className="lilita-one-regular text-xl">ASTRA</h2>
         </div>
 
         <div>
@@ -49,13 +49,16 @@ export default function Navbar() {
                     }
                   `}</style>
 
-                  <div className="flex  p-2">
+                  <div className="flex p-2">
                     <div className="p-3">
                       <div className="flex pt-2 ">
+                        
+
                         <div className="Poppins">{session.user.name}</div>
+
                         <button
                           className="pl-5 cursor-pointer"
-                          onClick={() => signOut()}
+                          onClick={() => signOut({callbackUrl: "/"})}
                         >
                           {" "}
                           <img

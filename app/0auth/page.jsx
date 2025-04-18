@@ -11,9 +11,10 @@ export default function Auth() {
   const router = useRouter();
 
   useEffect(() => {
-    if(status === "authenticated")
-        router.push("/")
-  })
+    if (status === "authenticated") 
+      router.push("/dashboard");
+  });
+
   return (
     <div className="flex justify-center p-100">
       <button
@@ -44,7 +45,7 @@ export default function Auth() {
         </svg>
         Continue with Google
       </button>
-      <button onClick={() => signOut()}>sign out</button>
+      <button onClick={() => signOut}>sign out</button>
     </div>
   );
 }
