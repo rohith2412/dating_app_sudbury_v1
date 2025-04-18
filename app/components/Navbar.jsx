@@ -54,7 +54,9 @@ export default function Navbar() {
                       <div className="flex pt-2 ">
                         
 
+                        <Link href="/profile">
                         <div className="Poppins">{session.user.name}</div>
+                        </Link>
 
                         <button
                           className="pl-5 cursor-pointer"
