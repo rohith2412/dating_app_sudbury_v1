@@ -6,6 +6,7 @@ export default function Profile() {
         <div>
             <Navbar />
             <Profileinput />
+            edm
             profile
         </div>
     )
