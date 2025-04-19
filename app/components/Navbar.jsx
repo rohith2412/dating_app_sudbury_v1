@@ -13,6 +13,7 @@ export default function Navbar() {
         url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
       </style>
 
+
       <div className="flex justify-between ">
         <div className="pl-15  pt-4  flex items-center gap-4">
           <img

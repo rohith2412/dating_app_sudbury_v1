@@ -450,7 +450,7 @@ body {
  }
  /* styling of Input */
  .input {
-  color: #fff;
+  color: rgba(221, 221, 221, 0.39);
   font-size: 0.9rem;
   background-color: transparent;
   width: 100%;
@@ -458,6 +458,7 @@ body {
   padding-inline: 0.5em;
   padding-block: 0.7em;
   border: none;
+
   border-bottom: var(--border-height) solid var(--border-before-color);
  }
 
@@ -473,3 +474,4 @@ body {
  input:focus ~ .input-border {
   width: 100%;
  }
+
