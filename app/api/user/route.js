@@ -1,18 +1,25 @@
 import { connectdb } from "@/connectdb/connectdb";
-import User from "@/models/UserModal";
+import User from "@/models/UserModel";
+
 
 export async function POST(req) {
   try {
-    const { name } = await req.json();
-  await connectdb();
+    const { name, PhoneNumber, Address, College, Education, gender, Age } = await req.json();
+    await connectdb();
 
-  const user = new User({
-    name,
-  });
+    const user = new User({
+      name,
+      PhoneNumber,
+      Address,
+      College,
+      Education,
+      gender,
+      Age,
+    });
 
-  await user.save();
-  return new Response(JSON.stringify(user));
+    await user.save();
+    return new Response(JSON.stringify(user));
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
