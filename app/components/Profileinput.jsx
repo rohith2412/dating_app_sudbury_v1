@@ -20,14 +20,22 @@ export function Profileinput() {
     const profileUpdate = {PhoneNumber, Address, College, Education, gender, Age} 
 
     const res = await fetch("http://localhost:3000/api/user", {
-      method: "POST",
+      method: "PUT",
       headers: {
-        "Content-Type": "aplication/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(profileUpdate)
       
     })
-    return new Response("updated user profile")
+
+    const data = await res.json();
+
+    if(res.ok) {
+      console.log("Profile updated:", data);
+
+    } else {
+      console.error("Update failed")
+    }
   }
 
  
@@ -42,14 +50,31 @@ export function Profileinput() {
       ) : (
         <div className="form">
           <form onSubmit={handleSubmit} >
-            <div className="input flex justify-between">{session.user.name}<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div>
-            <div className="input flex justify-between">{session.user.email}<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div>
-            <input value={PhoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]" placeholder="PhoneNumber" required="" type="number" />
-            <input value={Address} onChange={(e) => setAddress(e.target.value)} className="input" placeholder="Address" required="" type="text"/>
-            <input value={College} onChange={(e) => setCollege(e.target.value)} className="input" placeholder="College" required="" type="text"/>
-            <input value={Education} onChange={(e)=> setEducation(e.target.value)} className="input" placeholder="Education" required="" type="text"/>
-            <input value={gender} onChange={(e) => setgender(e.target.value)} className="input" placeholder="gender" required="" type="text"/>
-            <input value={Age} onChange={(e) => setAge(e.target.value)} type="number" placeholder="Age" required className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"/>
+            <div className="input flex justify-between">{session.user.name}<svg xmlns="http://www.w3.org/2000/svg" 
+            height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 
+            23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 
+            56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 
+            33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div>
+            
+            <div className="input flex justify-between">{session.user.email}<svg xmlns="http://www.w3.org/2000/svg" 
+            height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33
+             23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 
+             56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 
+             33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div>
+
+            <input value={PhoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="input appearance-none
+             [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
+             placeholder="PhoneNumber"  type="number" />
+
+            <input value={Address} onChange={(e) => setAddress(e.target.value)} className="input" placeholder="Address"  type="text"/>
+            <input value={College} onChange={(e) => setCollege(e.target.value)} className="input" placeholder="College"  type="text"/>
+            <input value={Education} onChange={(e)=> setEducation(e.target.value)} className="input" placeholder="Education"  type="text"/>
+            <input value={gender} onChange={(e) => setgender(e.target.value)} className="input" placeholder="gender"  type="text"/>
+
+            <input value={Age} onChange={(e) => setAge(e.target.value)} type="number" placeholder="Age" 
+            required className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none 
+            [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"/>
+
             <button type="submit">Update profile</button>
           </form>
     </div>

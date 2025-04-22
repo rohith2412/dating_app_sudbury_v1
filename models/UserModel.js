@@ -4,12 +4,10 @@ const { Schema, model, models } = require("mongoose");
 const UserSchema = new Schema({
     email: {
         type: String,
-        unique: [true, 'Email already exists'],
-        required: [true, 'Email  is required']
+        unique: [true, 'Email already exists']
     },
     name: {
-        type: String,
-        required: [true, 'Name is required']
+        type: String
     },
     image: {
         type: String

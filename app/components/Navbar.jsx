@@ -56,7 +56,7 @@ export default function Navbar() {
                         
 
                         <Link href="/profile">
-                        <div className="Poppins">{session.user.name}</div>
+                        <div className="Poppins hover:opacity-45 ">{session.user.name}</div>
                         </Link>
 
                         <button
