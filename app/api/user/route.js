@@ -1,30 +1,51 @@
-// File: app/api/user/update/route.js
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import dbConnect from "@/connectdb/connectdb"
+import { connectdb } from "@/connectdb/connectdb";
 import User from "@/models/UserModel";
 
-export async function PUT(req) {
-  const session = await getServerSession(authOptions);
-
-  if (!session) {
-    return Response.json({ message: "Unauthorized" }, { status: 401 });
-  }
-
-  const body = await req.json();
-  const { age } = body;
-
+export async function POST(req) {
   try {
-    await dbConnect();
+    const { name,email } = await req.json();
+
+    await connectdb();
+
+    const user = new User({ name, email });
+    await user.save();
+
+    return new Response("User added");
+  } catch (error) {
+    console.error(error);
+    return new Response("Error saving user");
+  }
+}
+
+export async function PATCH(req) {
+  try {
+    const body = await req.json();
+    const { email, PhoneNumber, Address, College, Education, gender, Age } = body;
+
+    await connectdb();
+
     const updatedUser = await User.findOneAndUpdate(
-      { email: session.user.email },
-      { age },
-      { new: true }
+      { email },
+      {
+        $set: {
+          PhoneNumber,
+          Address,
+          College,
+          Education,
+          gender,
+          Age
+        }
+      },
+      { new: true } 
     );
 
-    return Response.json({ message: "User updated", user: updatedUser });
+    if (!updatedUser) {
+      return new Response("User not found", { status: 404 });
+    }
+
+    return new Response(JSON.stringify(updatedUser), { status: 200 });
   } catch (error) {
-    console.error("Update error:", error);
-    return Response.json({ message: "Internal Server Error" }, { status: 500 });
+    console.error("Error updating user:", error);
+    return new Response(`Error: ${error.message}`, { status: 500 });
   }
 }

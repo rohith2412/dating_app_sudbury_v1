@@ -15,30 +15,38 @@ export function Profileinput() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-
-    const profileUpdate = {PhoneNumber, Address, College, Education, gender, Age} 
-
+  
+    if (!session) return; 
+  
+    const profileUpdate = {
+      email: session.user.email,
+      PhoneNumber,
+      Address,
+      College,
+      Education,
+      gender,
+      Age
+    };
+  
     const res = await fetch("http://localhost:3000/api/user", {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(profileUpdate)
-      
-    })
-
+    });
+  
     const data = await res.json();
-
-    if(res.ok) {
+  
+    if (res.ok) {
       console.log("Profile updated:", data);
-
     } else {
-      console.error("Update failed")
+      console.error("Update failed");
     }
-  }
+  };
+  
 
- 
+
 
   return (
     <div>
@@ -72,7 +80,7 @@ export function Profileinput() {
             <input value={gender} onChange={(e) => setgender(e.target.value)} className="input" placeholder="gender"  type="text"/>
 
             <input value={Age} onChange={(e) => setAge(e.target.value)} type="number" placeholder="Age" 
-            required className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none 
+            className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none 
             [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"/>
 
             <button type="submit">Update profile</button>
