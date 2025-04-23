@@ -15,7 +15,9 @@ export default function Profile() {
   return (
     <div>
       <Navbar />
-      <Profileinput />
+      <div className="grid justify-center mt-25">
+        <Profileinput />
+      </div>
     </div>
   );
 }
