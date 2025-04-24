@@ -1,3 +1,5 @@
+"use client"
+
 export default function Minibar() {
   return (
     <div className=" text-4xl font-semibold mx-auto text-center border-gray-300  border border-x-0 border-t-0 flex justify-center text-black tracking-tight">

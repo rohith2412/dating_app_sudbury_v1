@@ -1,3 +1,5 @@
+"use client"
+
 import Heading from "../components/Heading";
 import { Joinforfree } from "../components/Joinforfree";
 import Minibar from "../components/Minibar";

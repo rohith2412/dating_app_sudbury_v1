@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import Navbar from "../components/Navbar";
 import { Profileinput } from "../components/Profileinput";
 import { useEffect } from "react";
+import { Profileview } from "../components/Profileview";
 
 export default function Profile() {
   const { data: session, status } = useSession();
@@ -15,8 +16,9 @@ export default function Profile() {
   return (
     <div>
       <Navbar />
+      
       <div className="grid justify-center mt-25">
-        <Profileinput />
+      <Profileview />
       </div>
     </div>
   );
