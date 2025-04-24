@@ -1,41 +1,38 @@
-"use client"
+"use client";
 
-import { useSession } from "next-auth/react"
-import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 
+export function ProfileView() {
+  const { data: session, status } = useSession();
+  const [profile, setProfile] = useState(null);
 
-export function Profileview() {
-    const { data: session} = useSession();
-    const router = useRouter();
+  // Fetch profile when the session is available
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetch("http://localhost:3000/api/user")
+        .then((res) => res.json())
+        .then((data) => setProfile(data))
+        .catch((error) => console.error("Failed to fetch profile:", error));
+    }
+  }, [status]);
 
-    return(
+  if (status === "loading") return <div>Loading...</div>;
+  if (status === "unauthenticated") return <div>Please log in to see your profile.</div>;
+
+  return (
+    <div className="profile-container">
+      <h1>Your Profile</h1>
+      {profile ? (
         <div>
-            <section>
-                {!session ? (
-                    <></>
-                ) : (
-                    <div className="form">
-                        <div>
-                            <div>
-                            <div className="input flex justify-between">{session.user.name}<svg xmlns="http://www.w3.org/2000/svg" 
-                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 
-                            23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 
-                            56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 
-                            33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div>
-                            
-                            <div className="input flex justify-between">{session.user.email}<svg xmlns="http://www.w3.org/2000/svg" 
-                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33
-                            23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 
-                            56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 
-                            33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                )}
-            </section>
-
+          <p><strong>Name:</strong> {profile.name}</p>
+          <p><strong>Email:</strong> {profile.email}</p>
+          <p><strong>Phone:</strong> {profile.phone}</p>
+          <p><strong>Address:</strong> {profile.address}</p>
         </div>
-    )
+      ) : (
+        <div>Loading profile data...</div>
+      )}
+    </div>
+  );
 }

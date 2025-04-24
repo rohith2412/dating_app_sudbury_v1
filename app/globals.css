@@ -462,6 +462,10 @@ body {
   border-bottom: var(--border-height) solid var(--border-before-color);
  }
 
+ .field_name{
+  color: rgba(221, 221, 221, 0.39);
+ }
+
  /* Hover on Input */
  input:hover {
   background: var(--input-hovered-color);
