@@ -17,7 +17,7 @@ export function Profileinput() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!session) return; 
   
     const profileUpdate = {

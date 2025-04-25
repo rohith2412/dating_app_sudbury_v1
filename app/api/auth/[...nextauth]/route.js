@@ -13,18 +13,23 @@ const handler = NextAuth({
   ],
   callbacks: {
     async session({ session, token }) {
+      console.log("Session Token:", token); // Log the token to verify it's correct
+      console.log("Session before:", session); // Log the session before modification
+  
       if (token?.user) {
         session.user = token.user;
       }
-
+  
       const sessionUser = await User.findOne({ email: session.user?.email });
-
       if (sessionUser) {
-        session.user.id = sessionUser._id.toString(); 
+        session.user.id = sessionUser._id.toString();
       }
-
+  
+      console.log("Session after:", session); // Log the session after modification
+  
       return session;
     },
+    
     async signIn({ profile }) {
       try {
         await connectdb(); 
