@@ -6,6 +6,7 @@ export default function Navbar() {
   const { data: session } = useSession();
   console.log(session);
 
+
   return (
     <div className="m-3">
       <style>
@@ -57,7 +58,11 @@ export default function Navbar() {
                         
 
                         <Link href="/profile">
-                        <div className="Poppins hover:opacity-45 ">{session.user.name}</div>
+                        <div className="flex justify-center items-center gap-4 hover:opacity-45">
+                          <img  className="w-8 h-8 rounded-full " src={session.user.image} alt={name}  />
+
+                          <div className="Poppins   ">{session.user.name}</div>
+                        </div>
                         </Link>
 
                         <button
