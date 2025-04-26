@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export function ProfileView() {
@@ -8,7 +9,7 @@ export function ProfileView() {
 
   useEffect(() => {
     if (session) {
-      console.log("🧠 User from session:", session.user);
+      console.log(session.user);
     }
   }, [session]);
 
@@ -28,19 +29,33 @@ export function ProfileView() {
   } = session.user;
 
   return (
-    <div className="p-4 max-w-md mx-auto bg-white rounded-lg shadow">
-      <h2 className="text-xl font-semibold mb-4">Welcome, {name}</h2>
-      <img src={image} alt={name} className="w-24 h-24 rounded-full mb-4" />
+    <div>
+        <h2 className="text-2xl font-bold flex justify-center">Welcome, {name}</h2>
 
-      <ul className="space-y-1 text-gray-700">
-        <li><strong>Email:</strong> {email}</li>
-        <li><strong>Phone Number:</strong> {PhoneNumber || "N/A"}</li>
-        <li><strong>Address:</strong> {Address || "N/A"}</li>
-        <li><strong>College:</strong> {College || "N/A"}</li>
-        <li><strong>Education:</strong> {Education || "N/A"}</li>
-        <li><strong>Gender:</strong> {gender || "N/A"}</li>
-        <li><strong>Age:</strong> {Age || "N/A"}</li>
-      </ul>
+       
+      <div className="pt-20">
+        <div className="flex gap-5 items-center"> 
+            <div className="flex ">Profile picture: </div>
+            <img src={image} alt={name} className="w-14 h-14 rounded-full mb-4" />
+        </div>
+
+        <ul>
+            <li className="flex justify-start gap-10 pt-4"><div>Email:</div> {email}</li>
+            <li className="flex justify-start gap-10 pt-4"><div>Phone Number:</div> {PhoneNumber || "N/A"}</li>
+            <li className="flex justify-start gap-10 pt-4"><div>Age:</div> {Age || "N/A"}</li>
+            <li className="flex justify-start gap-10 pt-4"><div>Gender:</div> {gender || "N/A"}</li>
+            <li className="flex justify-start gap-10 pt-4"><div>Address:</div> {Address || "N/A"}</li>
+            <li className="flex justify-start gap-10 pt-4"><div>College:</div> {College || "N/A"}</li>
+            <li className="flex justify-start gap-10 pt-4"><div>Education:</div> {Education || "N/A"}</li>
+        </ul>
+        <div className="flex justify-center pt-8">
+        <Link href={"/update"}>
+            <button className="flex justify-center text-black p-2 font-bold text-sm border-2 rounded-2xl bg-white">
+                Edit profile
+            </button>
+        </Link>
+        </div>
+      </div>
     </div>
   );
 }

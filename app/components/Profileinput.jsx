@@ -41,7 +41,7 @@ export function Profileinput() {
     const data = await res.json();
   
     if (res.ok) {
-      router.push("/")
+      router.push("/profile")
     } else {
       console.error("Update failed");
     }
@@ -59,7 +59,9 @@ export function Profileinput() {
         </>
       ) : (
         <div className="form">
-          <form className="" onSubmit={handleSubmit} >
+          <h2 className="text-2xl font-bold flex justify-center">Edit Your Profile</h2>
+
+          <form className="pt-10" onSubmit={handleSubmit} >
             <div className="input flex justify-between">{session.user.name}<svg xmlns="http://www.w3.org/2000/svg" 
             height="24px" viewBox="0 -960 960 960" width="24px" fill="#AAAA"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 
             23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 
@@ -86,7 +88,7 @@ export function Profileinput() {
             [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"/>
 
             <div className="flex justify-center pt-7">
-              <button className="flex justify-center text-black p-2 text-sm border-2 rounded-2xl bg-white"  type="submit">Update Profile</button>
+              <button className="font-bold flex justify-center text-black p-2 text-sm border-2 rounded-2xl bg-white"  type="submit">Update Profile</button>
             </div>
           </form>
     </div>

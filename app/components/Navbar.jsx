@@ -14,6 +14,7 @@ export default function Navbar() {
       </style>
       
       <div className="flex justify-between ">
+        <Link href={"/"}>
         <div className="pl-15  pt-4  flex items-center gap-4">
           <img
             src="/st1.png"
@@ -22,6 +23,7 @@ export default function Navbar() {
           />
           <h2 className="lilita-one-regular text-xl">ASTRA</h2>
         </div>
+        </Link>
 
         <div>
           <section>
