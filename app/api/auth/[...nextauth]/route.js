@@ -45,7 +45,7 @@ const handler = NextAuth({
           await User.create({
             email: profile.email,
             name: profile.name,
-            image: profile.picture,
+            image: profile.picture, 
             PhoneNumber: 0,
             Address: "Not Provided",
             College: "Not Provided",
@@ -53,6 +53,17 @@ const handler = NextAuth({
             gender: "Not Provided",
             Age: 0,
           });
+        } else {
+          
+          await User.updateOne(
+            { email: profile.email },
+            {
+              $set: {
+                name: profile.name,
+                image: profile.picture, 
+              },
+            }
+          );
         }
 
         return true;

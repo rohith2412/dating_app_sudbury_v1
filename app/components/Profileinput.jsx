@@ -88,7 +88,7 @@ export function Profileinput() {
             [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"/>
 
             <div className="flex justify-center pt-7">
-              <button className="font-bold flex justify-center text-black p-2 text-sm border-2 rounded-2xl bg-white"  type="submit">Update Profile</button>
+              <button className="font-bold flex justify-center text-black p-2 text-sm border-2 rounded-2xl cursor-pointer bg-white"  type="submit">Update Profile</button>
             </div>
           </form>
     </div>

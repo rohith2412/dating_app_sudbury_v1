@@ -1,7 +1,5 @@
 import { connectdb } from "@/connectdb/connectdb";
 import User from "@/models/UserModel";
-import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";  // Adjust the path to your auth options if needed
 
 
 export async function POST(req) {

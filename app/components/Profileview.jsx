@@ -48,7 +48,7 @@ export function ProfileView() {
         </ul>
         <div className="flex justify-center pt-8">
         <Link href={"/update"}>
-            <button className="flex justify-center text-black p-2 font-bold text-sm border-2 rounded-2xl bg-white">
+            <button className="flex justify-center cursor-pointer text-black p-2 font-bold text-sm border-2 rounded-2xl bg-white">
                 Edit profile
             </button>
         </Link>
