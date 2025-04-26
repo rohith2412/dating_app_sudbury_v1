@@ -11,6 +11,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  // secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async session({ session, token }) {
       console.log("Session Token:", token); // Log the token to verify it's correct

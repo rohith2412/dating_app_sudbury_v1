@@ -1,8 +1,5 @@
 import { connectdb } from "@/connectdb/connectdb";
 import User from "@/models/UserModel";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { getSession } from "next-auth/react";
 
 export async function POST(req) {
   try {
