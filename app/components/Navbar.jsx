@@ -71,7 +71,7 @@ export default function Navbar() {
                         >
                           {" "}
                           <img
-                            className=""
+                            className="hover:opacity-45"
                             src="logout.png"
                             alt="Logo"
                             width="20"

@@ -52,3 +52,12 @@ export async function PATCH(req) {
 }
 
 
+export async function GET(res) {
+    try {
+      await connectdb();
+      const alluser = await User.find()
+      return new Response(JSON.stringify(alluser))
+    } catch (error) {
+      console.log(error)
+    }
+}
