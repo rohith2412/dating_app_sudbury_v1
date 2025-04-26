@@ -1,5 +1,8 @@
 import { connectdb } from "@/connectdb/connectdb";
 import User from "@/models/UserModel";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]/route";  // Adjust the path to your auth options if needed
+
 
 export async function POST(req) {
   try {
@@ -50,3 +53,40 @@ export async function PATCH(req) {
   }
 }
 
+
+export async function GET(req) {
+  try {
+    // Get the session from NextAuth
+    const session = await getServerSession(authOptions);
+
+    // If no session, return an error
+    if (!session) {
+      return new Response(
+        JSON.stringify({ error: "Not authenticated" }),
+        { status: 401 }
+      );
+    }
+
+    // Connect to the database
+    await connectdb();
+
+    // Find the user by email from the session
+    const user = await User.findOne({ email: session.user.email }).select("-password");  // Exclude password
+
+    if (!user) {
+      return new Response(
+        JSON.stringify({ error: "User not found" }),
+        { status: 404 }
+      );
+    }
+
+    // Return the user data
+    return new Response(JSON.stringify(user), { status: 200 });
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to fetch user data" }),
+      { status: 500 }
+    );
+  }
+}

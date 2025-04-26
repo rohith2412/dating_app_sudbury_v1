@@ -3,7 +3,6 @@ import User from "@/models/UserModel";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-
 const handler = NextAuth({
   providers: [
     GoogleProvider({
@@ -11,29 +10,34 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  // secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async session({ session, token }) {
-      console.log("Session Token:", token); // Log the token to verify it's correct
-      console.log("Session before:", session); // Log the session before modification
-  
-      if (token?.user) {
-        session.user = token.user;
-      }
-  
-      const sessionUser = await User.findOne({ email: session.user?.email });
+    async session({ session }) {
+      await connectdb();
+
+      const sessionUser = await User.findOne({ email: session.user?.email }).lean();
+
       if (sessionUser) {
-        session.user.id = sessionUser._id.toString();
+        session.user = {
+          id: sessionUser._id.toString(),
+          name: sessionUser.name,
+          email: sessionUser.email,
+          image: sessionUser.image,
+          PhoneNumber: sessionUser.PhoneNumber,
+          Address: sessionUser.Address,
+          College: sessionUser.College,
+          Education: sessionUser.Education,
+          gender: sessionUser.gender,
+          Age: sessionUser.Age,
+        };
       }
-  
-      console.log("Session after:", session); // Log the session after modification
-  
+
       return session;
     },
-    
+
     async signIn({ profile }) {
       try {
-        await connectdb(); 
+        await connectdb();
 
         const userExist = await User.findOne({ email: profile.email });
 
@@ -42,20 +46,19 @@ const handler = NextAuth({
             email: profile.email,
             name: profile.name,
             image: profile.picture,
+            PhoneNumber: 0,
+            Address: "Not Provided",
+            College: "Not Provided",
+            Education: "Not Provided",
+            gender: "Not Provided",
+            Age: 0,
           });
         }
 
-        return {
-          email: profile.email,
-          user: {
-            email: profile.email,
-            name: profile.name,
-            image: profile.picture,
-          },
-        };
+        return true;
       } catch (error) {
         console.error("Error during sign-in:", error);
-        return false; 
+        return false;
       }
     },
   },
