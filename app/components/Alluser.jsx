@@ -35,11 +35,8 @@ export function Alluser() {
         <div>
             {users.map((item) => (
                 <div key={item.email}>
+                    <img src={item.image} alt={name} className="w-14 h-14 rounded-full mb-4" />
                     <h1>{item.name}</h1>
-                    <h1>{item.email}</h1>
-                    <h1>{item.PhoneNumber}</h1>
-                    <h1>{item.Address}</h1>
-                    <h1>{item.College}</h1>
                     <h1>{item.Education}</h1>
                     <h1>{item.gender}</h1>
                     <h1>{item.Age}</h1>

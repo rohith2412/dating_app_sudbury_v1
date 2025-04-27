@@ -61,7 +61,7 @@ export default function Navbar() {
                         <div className="flex justify-center items-center gap-4 hover:opacity-45">
                           <img  className="w-8 h-8 rounded-full " src={session.user.image} alt={name}  />
 
-                          <div className="Poppins   ">{session.user.name}</div>
+                          <div className="poppins   ">{session.user.name}</div>
                         </div>
                         </Link>
 
