@@ -15,8 +15,9 @@ export default function Dashboard() {
                 </Link>
                 <div className="border-none pt-2 pr-4 pl-4 pb-2 cursor-pointer hover:bg-blue-800 rounded-xl">Messages</div>
             </div>
-            <div className="p-100 pt-20">
+            <div className="p-100 pt-20 flex">
                 <Alluser />
+                
             </div>
         </div>
     )

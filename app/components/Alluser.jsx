@@ -32,14 +32,27 @@ export function Alluser() {
     }
 
     return (
-        <div>
+        <div className="flex gap-10 border-none poppins">
             {users.map((item) => (
-                <div key={item.email}>
-                    <img src={item.image} alt={name} className="w-14 h-14 rounded-full mb-4" />
-                    <h1>{item.name}</h1>
-                    <h1>{item.Education}</h1>
-                    <h1>{item.gender}</h1>
-                    <h1>{item.Age}</h1>
+                <div className="w-70" key={item.email}>
+                    <div className="bg-gray-950 p-5 rounded-2xl">
+                        <div className="flex items-center gap-5">
+                            <img src={item.image} alt={item.name} className="w-12 h-12 rounded-full" />
+                            <div className="w-full"> 
+                                <div className="flex justify-between items-center"> 
+                                    <h1>{item.name}</h1>
+                                    <div>
+                                        <img src="/st1.png" alt="logo" className="w-7 h-7 hover:scale-110 transition-transform duration-200" />
+                                    </div>
+                                </div>
+                                <p className="text-xs opacity-60">{item.Education}</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-5 pt-3">
+                            <h1>{item.gender}</h1>
+                            <h1>{item.Age}</h1>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
