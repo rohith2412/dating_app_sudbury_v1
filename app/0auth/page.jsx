@@ -45,7 +45,7 @@ export default function Auth() {
         </svg>
         Continue with Google
       </button>
-      <button onClick={() => signOut}>sign out</button>
+      {/* <button onClick={() => signOut}>sign out</button> */}
     </div>
   );
 }

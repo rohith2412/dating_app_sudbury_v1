@@ -7,7 +7,6 @@ export default function Dashboard() {
     return(
         <div>
             <Navbar />
-            
             <div className="poppins flex justify-center gap-30 ">
                 <div className="border-none pt-2 pr-4 pl-4 pb-2 cursor-pointer hover:bg-blue-800 rounded-xl">Events</div>
                 <Link href={"/dashboard"}>
@@ -17,7 +16,6 @@ export default function Dashboard() {
             </div>
             <div className="p-100 pt-20 flex">
                 <Alluser />
-                
             </div>
         </div>
     )

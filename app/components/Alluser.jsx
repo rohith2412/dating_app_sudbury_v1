@@ -37,7 +37,7 @@ export function Alluser() {
                 <div className="w-70" key={item.email}>
                     <div className="bg-gray-950 p-5 rounded-2xl">
                         <div className="flex items-center gap-5">
-                            <img src={item.image} alt={item.name} className="w-12 h-12 rounded-full" />
+                            <img src={item.image} alt={"loading..."} className="w-12 h-12 rounded-full" />
                             <div className="w-full"> 
                                 <div className="flex justify-between items-center"> 
                                     <h1>{item.name}</h1>
@@ -51,6 +51,7 @@ export function Alluser() {
                         <div className="flex gap-5 pt-3">
                             <h1>{item.gender}</h1>
                             <h1>{item.Age}</h1>
+                            <h1>{item.Address}</h1>
                         </div>
                     </div>
                 </div>

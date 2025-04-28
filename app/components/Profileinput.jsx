@@ -78,10 +78,17 @@ export function Profileinput() {
              [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
              placeholder="PhoneNumber"  type="number" />
 
-            <input required value={Address} onChange={(e) => setAddress(e.target.value)} className="input" placeholder="Address"  type="text"/>
+            <input required value={Address} onChange={(e) => setAddress(e.target.value)} className="input" placeholder="Ex. Sudbury, Toronto"  type="text"/>
             <input required value={College} onChange={(e) => setCollege(e.target.value)} className="input" placeholder="College"  type="text"/>
             <input required value={Education} onChange={(e)=> setEducation(e.target.value)} className="input" placeholder="Education"  type="text"/>
-            <input required value={gender} onChange={(e) => setgender(e.target.value)} className="input" placeholder="gender"  type="text"/>
+            <select required value={gender} onChange={(e) => setgender(e.target.value)} className="input">
+              <option className="bg-black" value="">Select Gender</option>
+              <option className="bg-black" value="Male">Male</option>
+              <option className="bg-black" value="Female">Female</option>
+            </select>
+
+
+            
 
             <input required value={Age} onChange={(e) => setAge(e.target.value)} type="number" placeholder="Age" 
             className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none 
