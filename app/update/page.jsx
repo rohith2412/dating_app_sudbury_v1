@@ -3,6 +3,7 @@
 import { useSession } from "next-auth/react";
 import Navbar from "../components/Navbar";
 import { Profileinput } from "../components/Profileinput";
+import { Background } from "../components/Background";
 
 export default function Update() {
   const { data: session, status } = useSession();
@@ -13,6 +14,7 @@ export default function Update() {
 
   return (
     <div>
+      <Background />
       <Navbar />
       
       <div className="grid justify-center mt-25">

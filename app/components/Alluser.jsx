@@ -43,6 +43,7 @@ export function Alluser() {
                                     <h1>{item.name}</h1>
                                     <div>
                                         <img src="/st1.png" alt="logo" className="w-7 h-7 hover:scale-110 transition-transform duration-200" />
+                                        <span class="tooltip">Premium</span>
                                     </div>
                                 </div>
                                 <p className="text-xs opacity-60">{item.Education}</p>

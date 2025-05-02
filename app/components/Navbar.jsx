@@ -5,8 +5,7 @@ import Link from "next/link";
 export default function Navbar() {
   const { data: session } = useSession();
   console.log(session);
-
-
+  
   return (
     <div className="m-3">
       <style>

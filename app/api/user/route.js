@@ -51,7 +51,6 @@ export async function PATCH(req) {
   }
 }
 
-
 export async function GET(res) {
     try {
       await connectdb();
@@ -61,3 +60,4 @@ export async function GET(res) {
       console.log(error)
     }
 }
+
