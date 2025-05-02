@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import { Loading } from "./Loading";
+import Link from "next/link";
 
 async function fetchAllUsers() {
     const res = await fetch("http://localhost:3000/api/user");
@@ -28,22 +30,23 @@ export function Alluser() {
     }, []); 
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div><Loading /></div>;
     }
 
     return (
         <div className="flex gap-10 border-none poppins">
             {users.map((item) => (
                 <div className="w-70" key={item.email}>
+                    <Link href={`/users/${item._id}`}>View
                     <div className="bg-gray-950 p-5 rounded-2xl">
                         <div className="flex items-center gap-5">
-                            <img src={item.image} alt={"loading..."} className="w-12 h-12 rounded-full" />
+                            <img src={item.image}  className="w-12 h-12 rounded-full" />
                             <div className="w-full"> 
                                 <div className="flex justify-between items-center"> 
                                     <h1>{item.name}</h1>
                                     <div>
                                         <img src="/st1.png" alt="logo" className="w-7 h-7 hover:scale-110 transition-transform duration-200" />
-                                        <span class="tooltip">Premium</span>
+                                        <span className="tooltip">Premium</span>
                                     </div>
                                 </div>
                                 <p className="text-xs opacity-60">{item.Education}</p>
@@ -55,6 +58,7 @@ export function Alluser() {
                             <h1>{item.Address}</h1>
                         </div>
                     </div>
+                    </Link>
                 </div>
             ))}
         </div>
