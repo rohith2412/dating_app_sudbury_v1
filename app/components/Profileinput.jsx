@@ -11,6 +11,7 @@ export function Profileinput() {
   const[PhoneNumber, setPhoneNumber] = useState("");
   const[Address, setAddress] = useState("");
   const[College, setCollege] = useState("");
+  const[Status, setStatus] = useState("");
   const[Education, setEducation]  = useState("");
   const[gender, setgender] = useState("");
   const[Age, setAge] = useState("");
@@ -25,6 +26,7 @@ export function Profileinput() {
       PhoneNumber,
       Address,
       College,
+      Status,
       Education,
       gender,
       Age
@@ -85,6 +87,12 @@ export function Profileinput() {
               <option className="bg-black" value="">Select Gender</option>
               <option className="bg-black" value="Male">Male</option>
               <option className="bg-black" value="Female">Female</option>
+            </select>
+            
+            <select required value={Status} onChange={(e) => setStatus(e.target.value)} className="input">
+              <option className="bg-black" value="">Status</option>
+              <option className="bg-black" value="Single">Single</option>
+              <option className="bg-black" value="Commited">Commited</option>
             </select>
 
 

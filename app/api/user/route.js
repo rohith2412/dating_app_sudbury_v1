@@ -21,7 +21,7 @@ export async function POST(req) {
 export async function PATCH(req) {
   try {
     const body = await req.json();
-    const { email, PhoneNumber, Address, College, Education, gender, Age } = body;
+    const { email, PhoneNumber,Status, Address, College, Education, gender, Age } = body;
 
     await connectdb();
 
@@ -31,6 +31,7 @@ export async function PATCH(req) {
         $set: {
           PhoneNumber,
           Address,
+          Status,
           College,
           Education,
           gender,
