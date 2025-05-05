@@ -1,5 +1,6 @@
 import { Background } from "@/app/components/Background";
 import Navbar from "@/app/components/Navbar";
+import { Request } from "@/app/components/Request";
 import { notFound } from "next/navigation";
 
 async function getUser(id) {
@@ -32,7 +33,9 @@ export default async function UserPage({ params }) {
               {user.gender === "Male" ? (
                 <>
                   <span>Male</span>
-                  <span className="text-blue-500 flex items-center  text-2xl">♂️</span>
+                  <span className="text-blue-500 flex items-center  text-2xl">
+                    ♂️
+                  </span>
                 </>
               ) : user.gender === "Female" ? (
                 <>
@@ -54,6 +57,9 @@ export default async function UserPage({ params }) {
             <p>{user.Status}</p>
           </div>
         </div>
+      </div>
+      <div>
+        <Request />
       </div>
     </div>
   );
