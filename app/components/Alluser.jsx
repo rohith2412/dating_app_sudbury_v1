@@ -30,7 +30,7 @@ export function Alluser() {
     }, []); 
 
     if (loading) {
-        return <div><Loading /></div>;
+        return <div className="flex justify-center"><Loading /></div>;
     }
 
     return (

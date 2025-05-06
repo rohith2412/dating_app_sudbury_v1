@@ -3,6 +3,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { Background } from "../components/Background";
 
 export default function Auth() {
   const { data: session, status } = useSession();
@@ -17,6 +18,7 @@ export default function Auth() {
 
   return (
     <div className="flex justify-center p-100">
+      <Background />
       <button
         onClick={() => signIn("google")}
         className="cursor-pointer text-black flex gap-2 items-center bg-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-zinc-300 transition-all ease-in duration-200"

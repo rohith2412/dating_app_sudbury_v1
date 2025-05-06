@@ -15,7 +15,8 @@ export function Profileinput() {
   const[Education, setEducation]  = useState("");
   const[gender, setgender] = useState("");
   const[Age, setAge] = useState("");
-
+  const[InstagramURL, setInstagramURL] = useState("");
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -29,7 +30,8 @@ export function Profileinput() {
       Status,
       Education,
       gender,
-      Age
+      Age,
+      InstagramURL
     };
   
     const res = await fetch("http://localhost:3000/api/user", {
@@ -96,7 +98,8 @@ export function Profileinput() {
             </select>
 
 
-            
+            <input required value={InstagramURL} onChange={(e) => setInstagramURL(e.target.value)} className="input" placeholder="Instagram URL"  type="text"/>
+
 
             <input required value={Age} onChange={(e) => setAge(e.target.value)} type="number" placeholder="Age" 
             className="input appearance-none [&::-webkit-outer-spin-button]:appearance-none 

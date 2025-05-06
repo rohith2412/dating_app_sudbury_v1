@@ -26,6 +26,7 @@ export function ProfileView() {
     Education,
     gender,
     Age,
+    InstagramURL
   } = session.user;
 
   return (
@@ -45,6 +46,10 @@ export function ProfileView() {
             <li className="flex justify-start gap-10 pt-4"><div>Address:</div> {Address || "N/A"}</li>
             <li className="flex justify-start gap-10 pt-4"><div>College:</div> {College || "N/A"}</li>
             <li className="flex justify-start gap-10 pt-4"><div>Education:</div> {Education || "N/A"}</li>
+            InstagramURL
+            <li className="flex justify-start gap-10 pt-4"><div>Instagram URL:</div> {InstagramURL || "N/A"}</li>
+
+
         </ul>
         <div className="flex justify-center pt-8">
         <Link href={"/update"}>

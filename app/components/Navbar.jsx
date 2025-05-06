@@ -68,7 +68,7 @@ export default function Navbar() {
                           className="pl-5 cursor-pointer"
                           onClick={() => signOut({callbackUrl: "/"})}
                         >
-                          {" "}
+                          
                           <img
                             className="hover:opacity-45"
                             src="logout.png"

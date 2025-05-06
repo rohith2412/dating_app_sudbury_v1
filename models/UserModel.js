@@ -33,6 +33,9 @@ const UserSchema = new Schema({
     },
     Age: {
         type: Number
+    },
+    InstagramURL: {
+        type: String
     }
 
 })

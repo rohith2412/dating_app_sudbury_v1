@@ -29,6 +29,7 @@ const handler = NextAuth({
           Education: sessionUser.Education,
           gender: sessionUser.gender,
           Age: sessionUser.Age,
+          InstagramURL: sessionUser.InstagramURL
         };
       }
 
@@ -52,6 +53,7 @@ const handler = NextAuth({
             Education: "Not Provided",
             gender: "Not Provided",
             Age: 0,
+            InstagramURL: "Not Provided"
           });
         } else {
           
