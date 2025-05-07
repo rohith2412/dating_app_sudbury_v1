@@ -31,23 +31,23 @@ export function ProfileView() {
 
   return (
     <div>
-        <h2 className="text-2xl font-bold flex justify-center">Welcome, {name}</h2>       
-      <div className="pt-20">
+        <h2 className="text-2xl font-bold flex  justify-center">Welcome, {name}</h2>       
+      <div className="lg:pt-20 pt-10 ">
         <div className="flex gap-5 items-center"> 
-            <div className="flex ">Profile picture: </div>
+            <div className="flex pl-1 ">Profile picture: </div>
             <img src={image} alt={name} className="w-14 h-14 rounded-full mb-4" />
         </div>
 
         <ul>
-            <li className="flex justify-start gap-10 pt-4"><div>Email:</div> {email}</li>
-            <li className="flex justify-start gap-10 pt-4"><div>Phone Number:</div> {PhoneNumber || "N/A"}</li>
-            <li className="flex justify-start gap-10 pt-4"><div>Age:</div> {Age || "N/A"}</li>
-            <li className="flex justify-start gap-10 pt-4"><div>Gender:</div> {gender || "N/A"}</li>
-            <li className="flex justify-start gap-10 pt-4"><div>Address:</div> {Address || "N/A"}</li>
-            <li className="flex justify-start gap-10 pt-4"><div>College:</div> {College || "N/A"}</li>
-            <li className="flex justify-start gap-10 pt-4"><div>Education:</div> {Education || "N/A"}</li>
-            InstagramURL
-            <li className="flex justify-start gap-10 pt-4"><div>Instagram URL:</div> {InstagramURL || "N/A"}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>Email:</div> {email}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>Phone Number:</div> {PhoneNumber || "N/A"}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>Age:</div> {Age || "N/A"}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>Gender:</div> {gender || "N/A"}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>Address:</div> {Address || "N/A"}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>College:</div> {College || "N/A"}</li>
+            <li className="flex pl-1 justify-start gap-10 pt-4"><div>Education:</div> {Education || "N/A"}</li>
+            
+            <li className="flex pl-1 w-70 justify-start gap-10 pt-4"><div className="flex">Instagram URL: {InstagramURL || "N/A"}</div></li>
 
 
         </ul>

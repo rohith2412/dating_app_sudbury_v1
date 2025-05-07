@@ -17,11 +17,11 @@ export default function Auth() {
   });
 
   return (
-    <div className="flex justify-center p-100">
+    <div className="flex justify-center pt-100">
       <Background />
       <button
         onClick={() => signIn("google")}
-        className="cursor-pointer text-black flex gap-2 items-center bg-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-zinc-300 transition-all ease-in duration-200"
+        className="cursor-pointer text-black scale-120 flex gap-2 items-center bg-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-zinc-300 transition-all ease-in duration-200"
       >
         <svg
           viewBox="0 0 48 48"
@@ -47,7 +47,7 @@ export default function Auth() {
         </svg>
         Continue with Google
       </button>
-      {/* <button onClick={() => signOut}>sign out</button> */}
+  
     </div>
   );
 }

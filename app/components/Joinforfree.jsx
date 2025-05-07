@@ -8,11 +8,11 @@ export function Joinforfree() {
   console.log(session);
 
   return (
-    <div className="">
+    <div className="items-center">
       {!session ? (
         <>
           <Link href="/0auth">
-            <button className="cursor-pointer flex justify-center border-white border-2 p-3 rounded-4xl ">
+            <button className="font-bold cursor-pointer flex justify-center border-white border-2 p-3 rounded-4xl ">
               Join for free
             </button>
           </Link>
@@ -20,8 +20,8 @@ export function Joinforfree() {
       ) : (
         <>
         <Link href="/dashboard">
-            <button className="cursor-pointer flex justify-center border-white border-2 p-3 rounded-4xl ">
-              View Dashboard
+            <button className="  cursor-pointer flex justify-center border-white border-2 p-3 rounded-4xl ">
+              Dashboard
             </button>
           </Link>
          </>

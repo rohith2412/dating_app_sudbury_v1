@@ -3,14 +3,16 @@ import Link from "next/link";
 import { Alluser } from "../components/Alluser";
 import Navbar from "../components/Navbar";
 import { Background } from "../components/Background";
+import Minibar from "../components/Minibar";
 
 export default function Dashboard() {
     return(
         <div>
             <Background />
+            <Minibar />
             <Navbar />
             
-            <div className="p-100 pt-20 flex">
+            <div className="pt-15 grid justify-center lg:flex lg:p-100 lg:pt-20 ">
                 <Alluser />
             </div>
         </div>

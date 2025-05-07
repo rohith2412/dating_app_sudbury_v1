@@ -1,21 +1,19 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import Minibar from "./Minibar";
 
 export default function Navbar() {
   const { data: session } = useSession();
   console.log(session);
   
   return (
-    <div className="m-3">
-      <Minibar />
+    <div className="lg:m-3">
       <style>
         @import
         url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
       </style>
       
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center pt-5 ">
         <Link href={"/"}>
         <div className=" pl-5 flex gap-2 items-center   lg:pl-15  lg:pt-4  lg:flex lg:items-center lg:gap-4">
           <img
@@ -31,7 +29,7 @@ export default function Navbar() {
           <section>
             {!session ? (
               <>
-                <div className="     lg:pr-15  lg:mt-4 flex w-full justify-end   ">
+                <div className="lg:pr-15   lg:mt-4 flex w-full justify-end  pr-4 ">
                   <div className="join border-0 flex scale-100 rounded-xl pl-3 pr-3  lg:justify-center lg:rounded-4xl   lg:pr-4 lg:pl-4">
                     <Link href="/0auth">
                       <button className="lilita-one-regular h-10 lg:h-12 cursor-pointer font-bold text-gray-800 tracking-tight">
@@ -54,10 +52,8 @@ export default function Navbar() {
                   `}</style>
 
                   <div className="flex p-2">
-                    <div className="p-3">
-                      <div className="flex pt-2 ">
-                        
-
+                    <div className="">
+                      <div className="flex ">
                         <Link href="/profile">
                         <div className="flex gap-2  justify-center items-center lg:gap-4 hover:opacity-45">
                           <img  className=" w-7 h-7 lg:w-8 lg:h-8 rounded-full " src={session.user.image} alt={name}  />

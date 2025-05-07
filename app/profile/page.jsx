@@ -18,7 +18,7 @@ export default function Profile() {
       <Background />
       <Navbar />
       
-      <div className="grid justify-center mt-25">
+      <div className="grid justify-center mt-10 lg:mt-25">
         <ProfileView />
       </div>
     </div>
