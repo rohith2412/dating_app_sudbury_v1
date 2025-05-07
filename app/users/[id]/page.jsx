@@ -1,7 +1,6 @@
 "use client";
 
 import { Background } from "@/app/components/Background";
-import { Message } from "@/app/components/Message";
 import Navbar from "@/app/components/Navbar";
 import { useSession } from "next-auth/react";
 import { useState, useEffect, use } from "react";
@@ -95,7 +94,6 @@ export default function UserPage({ params }) {
           </a>
         </div>
       </div>
-      <Message />
     </div>
   );
 }
