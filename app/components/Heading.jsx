@@ -7,8 +7,6 @@ export default function Heading() {
         Join Our Malayali<br />Dating 💌 Community <br /> In <span className=" text-red-400 underline ">Sudbury</span>📍
       </h1>
     </div>
-    // 4klngtrklnre3refr
-
 
   );
 }
