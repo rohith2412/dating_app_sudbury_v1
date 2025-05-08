@@ -5,11 +5,10 @@ import Link from "next/link";
 export default function Premiumbutton() {
   return (
     <div>
-      <Link href={"/dashboard"}>
         <div className="flex justify-center">
           <button className="AstraPro">
             <div className="wrapper ">
-              <span className="tracking-tighter ">Astra Plus</span>
+              <span className="">Join for free</span>
               <div className="circle circle-12"></div>
               <div className="circle circle-11"></div>
               <div className="circle circle-10"></div>
@@ -25,7 +24,6 @@ export default function Premiumbutton() {
             </div>
           </button>
         </div>
-      </Link>
     </div>
   );
 }
