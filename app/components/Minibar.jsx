@@ -6,7 +6,7 @@ export default function Minibar() {
       
       <div className="wrapper">
         <div className="text-sm  pt-2 item item1">Malayalis in sudbury</div>
-        <div className="text-sm  pt-2 item item2">Made by Rohith with love</div>
+        <div className="text-sm  pt-2 item item2">Made by Rohith </div>
         <div className="text-sm  pt-2 item item3">Join Sudbury comunity </div>
         <div className="text-sm  pt-2 item item4">Malayali dating site</div>
         <div className="text-sm  pt-2 item item5">Date someone in sudbury</div>

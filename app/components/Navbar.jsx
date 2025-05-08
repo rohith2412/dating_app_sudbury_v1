@@ -29,7 +29,7 @@ export default function Navbar() {
           <section>
             {!session ? (
               <>
-                <div className="lg:pr-15   lg:mt-4 flex w-full justify-end  pr-4 ">
+                {/* <div className="lg:pr-15   lg:mt-4 flex w-full justify-end  pr-4 ">
                   <div className="join border-0 flex scale-100 rounded-xl pl-3 pr-3  lg:justify-center lg:rounded-4xl   lg:pr-4 lg:pl-4">
                     <Link href="/0auth">
                       <button className="lilita-one-regular h-10 lg:h-12 cursor-pointer font-bold text-gray-800 tracking-tight">
@@ -37,7 +37,8 @@ export default function Navbar() {
                       </button>
                     </Link>
                   </div>
-                </div>
+                </div> */}
+                {""}
               </>
             ) : (
               <>
