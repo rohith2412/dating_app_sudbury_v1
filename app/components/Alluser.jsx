@@ -5,7 +5,7 @@ import { Loading } from "./Loading";
 import Link from "next/link";
 
 async function fetchAllUsers() {
-  const res = await fetch("http://localhost:3000/api/user");
+  const res = await fetch("https://master.d6hyl9ll7latm.amplifyapp.com/api/user");
   const data = await res.json();
   return data;
 }

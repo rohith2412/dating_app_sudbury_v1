@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 import { useState, useEffect, use } from "react";
 
 async function getUser(id) {
-  const res = await fetch(`http://localhost:3000/api/profile/${id}`);
+  const res = await fetch(`https://master.d6hyl9ll7latm.amplifyapp.com/api/profile/${id}`);
   if (!res.ok) {
     throw new Error("User not found");
   }
