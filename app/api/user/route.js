@@ -55,8 +55,9 @@ export async function PATCH(req) {
 
 export async function GET(res) {
     try {
-      await connectdb();
-      const alluser = await User.find()
+      const alluser = await User.find({
+      Address: { $exists: true, $ne: null, $ne: "", $not: /^\s*$/, $nin: ["Not Provided", "", null], },
+    });
       return new Response(JSON.stringify(alluser))
     } catch (error) {
       console.log(error)

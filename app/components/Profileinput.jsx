@@ -64,6 +64,7 @@ export function Profileinput() {
       ) : (
         <div className="form">
           <h2 className="text-2xl font-bold flex justify-center">Edit Your Profile</h2>
+          <p className="text-sm pt-2 opacity-50">*Note: You must fille in with data to make your account public*</p>
 
           <form className="pt-10" onSubmit={handleSubmit} >
             <div className="input flex justify-between">{session.user.name}<svg xmlns="http://www.w3.org/2000/svg" 
