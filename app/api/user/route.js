@@ -2,13 +2,14 @@ import { connectdb } from "@/connectdb/connectdb";
 import User from "@/models/UserModel";
 
 
+//test purpose post route
 export async function POST(req) {
   try {
-    const { name,email } = await req.json();
+    const { name,email, gender, Age } = await req.json();
 
     await connectdb();
 
-    const user = new User({ name, email });
+    const user = new User({ name, email, gender, Age  });
     await user.save();
 
   } catch (error) {
