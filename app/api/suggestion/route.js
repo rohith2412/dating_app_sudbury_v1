@@ -25,8 +25,8 @@ export async function GET() {
 
       if (match) {
         matchedPairs.push({
-          user1: { name: user.name, age: user.Age, gender: user.gender },
-          user2: { name: match.name, age: match.Age, gender: match.gender },
+          user1: { name: user.name, age: user.Age, gender: user.gender, image: user.image, Education: user.Education, Address: user.Address },
+          user2: { name: match.name, age: match.Age, gender: match.gender, image: match.image, Education: match.Education, Address: match.Address },
         });
 
         usedIds.add(user._id.toString());
@@ -34,14 +34,8 @@ export async function GET() {
       }
     }
 
-    return new Response(JSON.stringify(matchedPairs), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(JSON.stringify(matchedPairs));
   } catch (error) {
-    return new Response(JSON.stringify({ message: "Error", error }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(JSON.stringify({ message: "Error", error }));
   }
 }

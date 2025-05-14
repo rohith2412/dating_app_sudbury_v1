@@ -1,52 +1,77 @@
-// import { useState, useEffect } from 'react';
+"use client";
 
-// const MatchedUsers = () => {
-//   const [pairs, setPairs] = useState([]);
-//   const [loading, setLoading] = useState(true);
+import { useEffect, useState } from "react";
 
-//   useEffect(() => {
-//     const fetchMatchedUsers = async () => {
-//       try {
-//         const response = await fetch('/api/suggestion');
-//         const data = await response.json();
+export default function SuggestionUser() {
+  const [suggestions, setSuggestions] = useState([]);
+  const [error, setError] = useState(null);
 
-//         if (response.ok) {
-//           setPairs(data);
-//         } else {
-//           console.log("No pairs found:", data.message);
-//         }
-//       } catch (error) {
-//         console.error("Error fetching matched users:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
+  useEffect(() => {
+    const getSuggestions = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_PORT_URL}/api/suggestion`
+        );
+        if (!res.ok) throw new Error("Failed to fetch suggestions");
+        const data = await res.json();
+        setSuggestions(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
 
-//     fetchMatchedUsers();
-//   }, []);
+    getSuggestions();
+  }, []);
 
-//   return (
-//     <div>
-//       {loading ? (
-//         <p>Loading...</p>
-//       ) : (
-//         <>
-//           <h2>Matched Users</h2>
-//           {pairs.length > 0 ? (
-//             pairs.map((pair, index) => (
-//               <div key={index}>
-//                 <h3>Pair {index + 1}:</h3>
-//                 <p><strong>{pair[0].name}</strong> (Age: {pair[0].Age}, Gender: {pair[0].gender})</p>
-//                 <p><strong>{pair[1].name}</strong> (Age: {pair[1].Age}, Gender: {pair[1].gender})</p>
-//               </div>
-//             ))
-//           ) : (
-//             <p>No matched pairs found</p>
-//           )}
-//         </>
-//       )}
-//     </div>
-//   );
-// };
+  if (error) return <div>Error: {error}</div>;
 
-// export default MatchedUsers;
+  if (suggestions.length === 0) {
+    return <div>No matched users found.</div>;
+  }
+
+  return (
+    <div className="p-4 space-y-4 grid justify-center poppins ">
+      <h2 className="text-2xl font-bold mb-4"></h2>
+      {suggestions.map((pair, index) => (
+        <div key={index} className="w-100">
+          <div className="flex justify-between bg-gray-950 p-5 rounded-2xl">
+            <div>
+              <div className="flex gap-4">
+                <img
+                  className="rounded-full w-12 h-12"
+                  src={pair.user1.image}
+                ></img>
+                <div>
+                  <p className=""> {pair.user1.name}</p>
+                  <p className="text-xs opacity-60"> {pair.user1.Education}</p>
+                </div>
+              </div>
+              <div className="flex gap-3 pt-3">
+                <p> {pair.user1.age}</p>
+                <p> {pair.user1.gender}</p>
+                <p> {pair.user1.Address}</p>
+              </div>
+            </div>
+            <div className="">
+              <div className="flex gap-4 ">
+                <img
+                  className="rounded-full w-12 h-12"
+                  src={pair.user2.image}
+                ></img>
+                <div>
+                  <p> {pair.user2.name}</p>
+                  <p className="text-xs opacity-60"> {pair.user2.Education}</p>
+                </div>
+              </div>
+              <div className="flex gap-3 pt-3">
+                <p> {pair.user2.age}</p>
+                <p> {pair.user2.gender}</p>
+                <p> {pair.user2.Address}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
