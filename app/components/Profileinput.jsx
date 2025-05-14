@@ -46,9 +46,7 @@ export function Profileinput() {
   
     if (res.ok) {
       router.push("/profile")
-    } else {
-      console.error("Update failed");
-    }
+    } 
   };
   
 

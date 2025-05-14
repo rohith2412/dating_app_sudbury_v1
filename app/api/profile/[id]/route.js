@@ -12,7 +12,7 @@ export async function GET(req, { params }) {
             user = await User.findById(id);
         }
         if (!user) {
-            user = await User.findOne({ email: id });  // fallback if needed
+            user = await User.findOne({ email: id });  
         }
 
         if (!user) {

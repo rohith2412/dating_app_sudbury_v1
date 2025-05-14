@@ -4,7 +4,7 @@ export const connectdb = async() => {
     try {
         if(mongoose.connection = true) {
             mongoose.connect(process.env.MONGODB_CONNECTION)
-            console.log("connected")
+           
             return new Response(200)
         }   else    {
             return new Response(401)

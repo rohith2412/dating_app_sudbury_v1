@@ -24,9 +24,9 @@ export function Alluser() {
 
     fetchData();
 
-    const intervalId = setInterval(fetchData, 180000);
+    // const intervalId = setInterval(fetchData, 180000);
 
-    return () => clearInterval(intervalId);
+    // return () => clearInterval(intervalId);
   }, []);
 
   if (loading) {

@@ -11,7 +11,6 @@ export async function POST(req) {
     const user = new User({ name, email });
     await user.save();
 
-    return new Response("User added");
   } catch (error) {
     console.error(error);
     return new Response("Error saving user");
