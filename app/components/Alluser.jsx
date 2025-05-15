@@ -36,7 +36,6 @@ export function Alluser() {
       </div>
     );
   }
-
   return (
     <div className="grid grid-cols-1 w-70 lg:w-300 lg:grid-cols-3 lg:gap-6 gap-5 poppins">
       {users.map((item) => (

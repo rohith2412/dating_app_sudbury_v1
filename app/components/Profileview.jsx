@@ -31,7 +31,7 @@ export function ProfileView() {
 
   return (
     <div>
-        <h2 className="text-2xl font-bold flex  justify-center">Welcome, {name}</h2>       
+        <h2 className="text-2xl font-bold flex  justify-center">Welcome, {name}</h2>  
       <div className="lg:pt-20 pt-10 ">
         <div className="flex gap-5 items-center"> 
             <div className="flex pl-1 ">Profile picture: </div>

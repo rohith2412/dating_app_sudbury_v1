@@ -81,9 +81,33 @@ export function Profileinput() {
              [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
              placeholder="PhoneNumber"  type="number" />
 
-            <input required value={Address} onChange={(e) => setAddress(e.target.value)} className="input" placeholder="Ex. Sudbury, Toronto"  type="text"/>
+            <select required value={Address} onChange={(e) => setAddress(e.target.value)} className="input">
+              <option className="bg-black" value="">Place</option>
+              <option className="bg-black" value="Sudbury">Sudbury</option>
+              <option className="bg-black" value="Toronto">Toronto</option>
+              <option className="bg-black" value="Scharbrough">Scharbrough</option>
+              <option className="bg-black" value="Mississauga">Mississauga</option>
+              <option className="bg-black" value="Ottawa">Ottawa</option>
+              <option className="bg-black" value="Montreal">Montreal</option>
+              <option className="bg-black" value="North Bay">North Bay</option>
+              <option className="bg-black" value="Barrie">Barrie</option>
+            </select>
+
             <input required value={College} onChange={(e) => setCollege(e.target.value)} className="input" placeholder="College"  type="text"/>
-            <input required value={Education} onChange={(e)=> setEducation(e.target.value)} className="input" placeholder="Education"  type="text"/>
+
+            <select required value={Education} onChange={(e) => setEducation(e.target.value)} className="input">
+              <option className="bg-black" value="">Field </option>
+              <option className="bg-black" value="Developer">Developer</option>
+              <option className="bg-black" value="Medical">Medical</option>
+              <option className="bg-black" value="Science">Science</option>
+              <option className="bg-black" value="Mechanical">Mechanical</option>
+              <option className="bg-black" value="Arts">Arts</option>
+              <option className="bg-black" value="Finance">Finance</option>
+              <option className="bg-black" value="Business">Business</option>
+              <option className="bg-black" value="Barrie">Barrie</option>
+            </select>
+
+
             <select required value={gender} onChange={(e) => setgender(e.target.value)} className="input">
               <option className="bg-black" value="">Select Gender</option>
               <option className="bg-black" value="Male">Male</option>

@@ -17,7 +17,7 @@ export default function Update() {
       <Background />
       <Navbar />
       
-      <div className="grid justify-center mt-25">
+      <div className="grid justify-center mt-10 lg:mt-25">
         <Profileinput />
       </div>
     </div>
