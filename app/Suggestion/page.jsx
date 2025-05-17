@@ -11,14 +11,15 @@ export default function Suggestion() {
       <Minibar />
       <Background />
       <Navbar />
-      <div className="flex justify-center p-2 gap-35 poppins">
+      <div className="flex justify-center p-2 lg:gap-35 gap-10 poppins">
         <Link href={"dashboard"}>
-        <button className="hover:underline ">Home</button>
+          <button className="hover:underline ">Home</button>
         </Link>
         <button className="underline">Random</button>
-       
       </div>
-      <SuggestedUser />
+      <div className="pt-2 lg:pt-15">
+        <SuggestedUser />
+      </div>
     </div>
   );
 }

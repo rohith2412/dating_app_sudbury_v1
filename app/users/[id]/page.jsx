@@ -2,6 +2,7 @@
 
 import { Background } from "@/app/components/Background";
 import Navbar from "@/app/components/Navbar";
+import { Warning } from "@/app/components/Warning";
 import { useSession } from "next-auth/react";
 import { useState, useEffect, use } from "react";
 
@@ -72,6 +73,13 @@ export default function UserPage({ params }) {
                 <span>{user.gender}</span>
               )}
             </p>
+            
+
+            <div className="w-max scale-80 ">
+              <a href={user.InstagramURL}>
+                <img className="" src="/instagram.png"></img>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -85,14 +93,16 @@ export default function UserPage({ params }) {
           </div>
         </div>
 
-        <div className="pl-10 pt-5">
-          <a
-            href={user.InstagramURL}
-            className="px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl shadow-lg transition"
-          >
-            Let’s Date 💌
+        {/* <div className="pl-10 pt-5">
+          <a className="px-6 py-2 bg-gray-800  text-white rounded-2xl shadow-lg transition">
+            Message 💌 
+            lg:scale-70 lg:mr-370 scale-60 mr-50
           </a>
-        </div>
+        </div> */}
+<div className="absolute left-0  scale-60">
+  <Warning />
+</div>
+
       </div>
     </div>
   );
