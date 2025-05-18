@@ -82,7 +82,7 @@ export function Profileinput() {
              placeholder="PhoneNumber"  type="number" />
 
             <select required value={Address} onChange={(e) => setAddress(e.target.value)} className="input">
-              <option className="bg-black" value="">Place</option>
+              <option className="bg-black" value="">Location</option>
               <option className="bg-black" value="Sudbury">Sudbury</option>
               <option className="bg-black" value="Toronto">Toronto</option>
               <option className="bg-black" value="Scharbrough">Scharbrough</option>

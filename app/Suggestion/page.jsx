@@ -15,7 +15,7 @@ export default function Suggestion() {
         <Link href={"dashboard"}>
           <button className="hover:underline ">Home</button>
         </Link>
-        <button className="underline">Random</button>
+        <button className="underline">Pair</button>
       </div>
       <div className="pt-2 lg:pt-15">
         <SuggestedUser />
