@@ -15,9 +15,10 @@ export default function Suggestion() {
         <Link href={"dashboard"}>
           <button className="hover:underline ">Home</button>
         </Link>
-        <button className="underline">Pair</button>
+        <button className="underline">dateLinker</button>
       </div>
-      <div className="pt-2 lg:pt-15">
+      
+      <div className="pt-2 lg:pt-9">
         <SuggestedUser />
       </div>
     </div>

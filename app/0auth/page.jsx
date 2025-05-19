@@ -17,9 +17,10 @@ export default function Auth() {
   });
 
   return (
-    <div className="bg-gray-950 mr-170 rounded-4xl mt-50 ml-170 m-20">
-      <Link href="/">
-      <div className=" flex justify-center pt-3 pl-80">
+    <div className="bg-gray-950  lg:mr-170 rounded-4xl lg:mt-50  mt-50 lg:ml-170 m-10 lg:m-20">
+      
+      <div className=" flex justify-end hover:opacity-70 pt-3 pr-3 ">
+        <Link href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="35px"
@@ -27,10 +28,11 @@ export default function Auth() {
           width="35px"
           fill="#FFFFFF"
         >
+          
           <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
         </svg>
+        </Link>
       </div>
-      </Link>
       <div className="flex justify-center ">
         <style>
           @import
@@ -55,7 +57,7 @@ export default function Auth() {
             </div>
           </div>
           <div className="text-center text-sm pt-5">
-            By tapping Log In or Continue, you agree to our <br />{" "}
+            By tapping Continue, you agree to our <br />{" "}
             <span className="underline text-blue-700">Terms</span> . Learn how
             we process your data in our <br />{" "}
             <span className="underline text-blue-700">Privacy Policy</span>, and{" "}

@@ -1,7 +1,7 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
-
 
 export default function SuggestionUser() {
   const [suggestions, setSuggestions] = useState([]);
@@ -32,6 +32,8 @@ export default function SuggestionUser() {
 
   return (
     <div className="p-4  text-sm space-y-4  grid justify-center poppins">
+      <p className="text-sm opacity-60 flex justify-center">*This list refreshes every week</p>
+
       {suggestions.map((pair, index) => (
         <div key={index} className="w-90 ">
           <div className="flex justify-between  bg-gray-950 p-5 rounded-2xl">
@@ -42,16 +44,26 @@ export default function SuggestionUser() {
                   src={pair.user1.image}
                 ></img>
                 <div>
-                  <p className=""> {pair.user1.name}</p>
-                 <div className="flex items-center ">
-                    <p className="text-xs opacity-60"> {pair.user1.Education}</p>
+                  <p className=""> {pair.user1.name.split(" ")[0]}</p>
+                  <div className="flex items-center ">
+                    <p className="text-xs opacity-60">
+                      {" "}
+                      {pair.user1.Education}
+                    </p>
                     <div className="flex justify-end">
-                      <a href={pair.user1.InstagramURL} target="_blank" rel="noopener noreferrer">
-                      <img className="scale-60" src="instagram.png" alt="Instagram" />
-                    </a>
+                      <a
+                        href={pair.user1.InstagramURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          className="scale-60"
+                          src="instagram.png"
+                          alt="Instagram"
+                        />
+                      </a>
                     </div>
-
-                 </div>
+                  </div>
                 </div>
               </div>
               <div className="flex gap-2 pt-3">
@@ -68,18 +80,26 @@ export default function SuggestionUser() {
                   src={pair.user2.image}
                 ></img>
                 <div>
-                  <p className="flex "> {pair.user2.name}</p>
+                  <p className="flex "> {pair.user2.name.split(" ")[0]}</p>
                   <div className="flex items-center justify-end">
-                    <p className="text-xs  opacity-60"> {pair.user2.Education}</p>
-                    
-                    
-                    <div className="flex justify-end">
-                    <a href={pair.user2.InstagramURL} target="_blank" rel="noopener noreferrer">
-                      <img className="scale-60" src="instagram.png" alt="Instagram" />
-                    </a>
-                    </div>
-                    
+                    <p className="text-xs  opacity-60">
+                      {" "}
+                      {pair.user2.Education}
+                    </p>
 
+                    <div className="flex justify-end">
+                      <a
+                        href={pair.user2.InstagramURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          className="scale-60"
+                          src="instagram.png"
+                          alt="Instagram"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

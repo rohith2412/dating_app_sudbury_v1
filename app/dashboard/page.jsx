@@ -15,7 +15,7 @@ export default function Dashboard() {
       <div className="flex justify-center p-2 lg:gap-35 gap-10 poppins">
         <button className="underline cursor-pointer">Home</button>
         <Link href={"Suggestion"}>
-        <button className="hover:underline cursor-pointer">Pair</button>
+        <button className="hover:underline cursor-pointer">dateLinker</button>
         </Link>
       </div>
       <div className="pt-5 grid justify-center lg:flex lg:p-100 lg:pt-20 ">

@@ -87,7 +87,7 @@ export default function UserPage({ params }) {
           <div className="grid p-5 w-fit opacity-80 gap-1">
             <p>📍 {user.Address}</p>
             <p>{user.Age} years old</p>
-            <p>{user.Education} student</p>
+            <p>{user.Education} discipline </p>
             <p>@ {user.College}</p>
             <p>{user.Status}</p>
           </div>
