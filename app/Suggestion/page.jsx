@@ -13,9 +13,9 @@ export default function Suggestion() {
       <Navbar />
       <div className="flex justify-center p-2 lg:gap-35 gap-10 poppins">
         <Link href={"dashboard"}>
-          <button className="hover:underline ">Home</button>
+          <button className="hover:underline cursor-pointer ">Home</button>
         </Link>
-        <button className="underline">dateLinker</button>
+        <button className="underline cursor-pointer">dateLinker</button>
       </div>
       
       <div className="pt-2 lg:pt-9">
