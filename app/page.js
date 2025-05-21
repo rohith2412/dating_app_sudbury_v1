@@ -1,4 +1,6 @@
 
+import Analytics from "./components/Analytics";
+import CookieConsentBanner from "./components/CookieConsentBanner";
 import Landing from "./landing/page";
 
 export default function Home() {
@@ -6,6 +8,8 @@ export default function Home() {
     <div>
       
       <Landing />
+      <CookieConsentBanner />
+      <Analytics />
 
     </div>
   );

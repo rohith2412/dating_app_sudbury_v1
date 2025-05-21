@@ -59,6 +59,7 @@ export default function Cookie_Policy() {
           Third-Party Cookies: Set by external services (e.g., Google
           Analytics).
         </li>
+        
       </ul>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">4. Managing Cookies</h2>

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
 
   return (
     <div className="lg:m-3">
