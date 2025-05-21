@@ -6,7 +6,9 @@ export function UserPolicy() {
             <Link href={"terms"}><p>Terms</p></Link>
             
             <Link href={"privacy-policy"}><p>Privacy Policy</p></Link>
-            <p>Cookie Policy</p>
+            
+            <Link href={"cookie-policy"}><p>Cookie Policy</p></Link>
+            
         </div>
     )
 }

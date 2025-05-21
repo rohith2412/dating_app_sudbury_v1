@@ -106,8 +106,8 @@ export default function Privacy_Policy() {
         <li>Request correction of any inaccuracies</li>
         <li>Withdraw consent to the use of your personal information</li>
       </ul>
-      <p className="mb-4">
-        To exercise these rights, please contact us at [Your Contact Email].
+      <p className="mb-4 text-sm">
+        To exercise these rights, please contact us at <a className="underline" href="mailto:rohithra75@gmail.com">rohithra75@gmail.com</a>.
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">7. Third-Party Links</h2>

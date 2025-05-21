@@ -89,7 +89,7 @@ export default function Terms() {
       <section>
         <h2 className="pt-5 text-xl">7. Privacy</h2>
         <p className="text-sm">
-          Your use of the App is also governed by our <a href="[Insert Link to Privacy Policy]">Privacy Policy</a>. Please review our Privacy Policy to understand how we collect, use, and protect your information.
+          Your use of the App is also governed by our <a href="privacy-policy" className="underline ">Privacy Policy</a>. Please review our Privacy Policy to understand how we collect, use, and protect your information.
         </p>
       </section>
 
