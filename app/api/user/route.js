@@ -21,7 +21,7 @@ export async function POST(req) {
 export async function PATCH(req) {
   try {
     const body = await req.json();
-    const { email, PhoneNumber,Status, Address, College, Education, gender, Age, InstagramURL } = body;
+    const { email, PhoneNumber,Status, Address, College, Education, gender, Age, InstagramURL, checked } = body;
 
     await connectdb();
 
@@ -36,7 +36,8 @@ export async function PATCH(req) {
           Education,
           gender,
           Age,
-          InstagramURL
+          InstagramURL,
+          checked
         }
       },
       { new: true } 

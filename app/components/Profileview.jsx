@@ -32,7 +32,9 @@ export function ProfileView() {
   return (
     <div>
         <h2 className="text-2xl font-bold flex  justify-center">Welcome, {name}</h2>  
-      <div className="lg:pt-20 pt-10 ">
+        <p className="text-sm pt-2 opacity-50">*Note: You must fille in with data to make your account public*</p>
+
+      <div className="lg:pt-10 pt-10 ">
         <div className="flex gap-5 items-center"> 
             <div className="flex pl-1 ">Profile picture: </div>
             <img src={image} alt={name} className="w-14 h-14 rounded-full mb-4" />

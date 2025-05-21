@@ -29,16 +29,20 @@ const UserSchema = new Schema({
         type: String
     },
     gender: {
-        type: String
+        type: String,
+        min: 18
     },
     Age: {
         type: Number
     },
     InstagramURL: {
-        type: String
+        type: String,
+        match: /^https?:\/\/(www\.)?instagram\.com\/[A-Za-z0-9._%-]+\/?$/
+
+    },
+    checked: {
+        type: Boolean
     }
-
-
 })
 
 const User = models.User || model("User", UserSchema);

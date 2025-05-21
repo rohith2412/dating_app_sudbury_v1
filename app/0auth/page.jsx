@@ -52,7 +52,7 @@ export default function Auth() {
           <p className="text-center text-sm pt-5">
             By tapping Continue, you agree to our
             <br />
-            <span className="underline text-blue-700">Terms</span>. Learn how we
+            <Link href="terms"><span className="underline text-blue-700">Terms</span></Link>. Learn how we
             process your data in our
             <br />
             <span className="underline text-blue-700">Privacy Policy</span>, and{" "}
