@@ -5,6 +5,7 @@ import Heading from "../components/Heading";
 import { Joinforfree } from "../components/Joinforfree";
 import Minibar from "../components/Minibar";
 import  Navbar  from "../components/Navbar";
+import { UserPolicy } from "../components/UserPolicies";
 
 export default function Landing() {
   return (
@@ -18,6 +19,7 @@ export default function Landing() {
       <div className="flex justify-center lg:p-10 p-20">
         <Joinforfree />
       </div>
+      <UserPolicy />
     </div>
   );
 }
